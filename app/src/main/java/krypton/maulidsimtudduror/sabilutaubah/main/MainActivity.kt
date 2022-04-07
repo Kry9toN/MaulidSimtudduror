@@ -37,19 +37,19 @@ class MainActivity : ComponentActivity() {
         lateinit var appContext: Context
         var IndexImage by Delegates.notNull<Int>()
         val LIST_JUDUL = arrayListOf(
-            "1.",
+            "1. Ya Robbi Sholli",
             "2.",
-            "3.",
-            "4.",
-            "5.",
-            "6.",
-            "7.",
-            "8.",
-            "9.",
-            "10.",
-            "11.",
-            "12.",
-            "13."
+            "3. Innafatahna",
+            "4. Alhamdulillahi",
+            "5. Tajallal Haqqu",
+            "6. Wa Ashadu",
+            "7. Amma Ba'du",
+            "8. Wa Qad Aana",
+            "9. Wa Mundzu",
+            "10. Fahiina Qoruba",
+            "11. Mahalul Qiyam",
+            "12. Wahiina Baraza",
+            "13. Wa Laqodittasofa"
         )
     }
 
