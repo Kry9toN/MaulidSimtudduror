@@ -20,8 +20,8 @@ private fun darkColorPalette() = if (Build.VERSION.SDK_INT >= Build.VERSION_CODE
     )
 } else {
     darkColors(
-        primary = Purple200,
-        primaryVariant = Purple700,
+        primary = Green200,
+        primaryVariant = Green700,
         secondary = Teal200,
         secondaryVariant = Teal200
     )
@@ -39,8 +39,8 @@ private fun lightColorPalette() = if (Build.VERSION.SDK_INT >= Build.VERSION_COD
     )
 } else {
     lightColors(
-        primary = Purple500,
-        primaryVariant = Purple700,
+        primary = Green500,
+        primaryVariant = Green700,
         secondary = Teal200,
         secondaryVariant = Teal200,
     )

@@ -40,7 +40,7 @@ fun viewImage(index: Int) {
             Image(
                 bitmap.asImageBitmap(),
                 contentDescription = "",
-                contentScale = ContentScale.Crop,
+                contentScale = ContentScale.Fit,
                 modifier = Modifier.fillMaxSize()
             )
         }
