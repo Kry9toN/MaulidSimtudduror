@@ -26,6 +26,7 @@ import com.google.accompanist.insets.rememberInsetsPaddingValues
 import com.google.accompanist.insets.ui.TopAppBar
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import krypton.maulidsimtudduror.sabilutaubah.R
+import krypton.maulidsimtudduror.sabilutaubah.info.AboutUs
 import krypton.maulidsimtudduror.sabilutaubah.ui.theme.appTheme
 import krypton.maulidsimtudduror.sabilutaubah.util.MainButton
 import krypton.maulidsimtudduror.sabilutaubah.view.ViewImage
@@ -36,8 +37,19 @@ class MainActivity : ComponentActivity() {
         lateinit var appContext: Context
         var IndexImage by Delegates.notNull<Int>()
         val LIST_JUDUL = arrayListOf(
-            "Ya Rabbi Sholli",
-            "1. Alhamdulillahi"
+            "1.",
+            "2.",
+            "3.",
+            "4.",
+            "5.",
+            "6.",
+            "7.",
+            "8.",
+            "9.",
+            "10.",
+            "11.",
+            "12.",
+            "13."
         )
     }
 
@@ -119,6 +131,14 @@ class MainActivity : ComponentActivity() {
                                     )
                                     Spacer(modifier = Modifier.size(10.dp))
                                 }
+                                Spacer(modifier = Modifier.size(20.dp))
+                                MainButton(
+                                    text = stringResource(id = R.string.about_app),
+                                    onClick = {
+                                        val i = Intent(appContext, AboutUs::class.java)
+                                        startActivity(i)
+                                    }
+                                )
                             }
                         }
                     }
