@@ -1,35 +1,25 @@
 package krypton.maulidsimtudduror.sabilutaubah.view
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.material.*
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
-import com.google.accompanist.insets.LocalWindowInsets
-import com.google.accompanist.insets.ProvideWindowInsets
-import com.google.accompanist.insets.navigationBarsHeight
-import com.google.accompanist.insets.rememberInsetsPaddingValues
+import com.google.accompanist.insets.*
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import krypton.maulidsimtudduror.sabilutaubah.R
-import krypton.maulidsimtudduror.sabilutaubah.main.MainActivity
 import krypton.maulidsimtudduror.sabilutaubah.main.MainActivity.Companion.IndexImage
-import krypton.maulidsimtudduror.sabilutaubah.util.viewImage
+import krypton.maulidsimtudduror.sabilutaubah.main.MainActivity.Companion.LIST_JUDUL
+import krypton.maulidsimtudduror.sabilutaubah.utils.viewImage
 import krypton.maulidsimtudduror.sabilutaubah.ui.theme.appTheme
-import krypton.maulidsimtudduror.sabilutaubah.util.MainButton
 
 class ViewImage : ComponentActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,15 +47,11 @@ class ViewImage : ComponentActivity(){
                                         verticalArrangement = Arrangement.Center,
                                     ) {
                                         Text(
-                                            text = stringResource(id = R.string.app_name),
+                                            text = LIST_JUDUL[IndexImage],
                                             style = MaterialTheme.typography.subtitle2,
-                                            fontSize = 18.sp,
-                                            modifier = Modifier.align(Alignment.CenterHorizontally)
-                                        )
-                                        Text(
-                                            text = stringResource(id = R.string.app_name_summary),
-                                            style = MaterialTheme.typography.caption,
-                                            modifier = Modifier.align(Alignment.CenterHorizontally)
+                                            color = MaterialTheme.colors.primary,
+                                            modifier = Modifier.align(Alignment.CenterHorizontally),
+                                            fontSize = 18.sp
                                         )
                                     }
                                 },
@@ -95,7 +81,12 @@ class ViewImage : ComponentActivity(){
                                 modifier = Modifier
                                     .verticalScroll(rememberScrollState())
                                     .widthIn(max = 600.dp)
-                                    .padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 16.dp)
+                                    .padding(
+                                        start = 16.dp,
+                                        end = 16.dp,
+                                        top = 12.dp,
+                                        bottom = 16.dp
+                                    )
                                     .navigationBarsPadding()
                             ) {
                                 viewImage(IndexImage)

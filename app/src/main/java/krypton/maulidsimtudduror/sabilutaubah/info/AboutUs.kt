@@ -1,24 +1,28 @@
 package krypton.maulidsimtudduror.sabilutaubah.info
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.*
+import androidx.compose.material.icons.outlined.Code
+import androidx.compose.material.icons.outlined.Collections
+import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.TheaterComedy
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
@@ -31,8 +35,9 @@ import com.google.accompanist.insets.ui.TopAppBar
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import krypton.maulidsimtudduror.sabilutaubah.BuildConfig
 import krypton.maulidsimtudduror.sabilutaubah.R
-import krypton.maulidsimtudduror.sabilutaubah.main.MainActivity.Companion.appContext
+import krypton.maulidsimtudduror.sabilutaubah.lottie.AboutAnimation
 import krypton.maulidsimtudduror.sabilutaubah.ui.theme.appTheme
+import krypton.maulidsimtudduror.sabilutaubah.utils.openUrl
 import kotlin.random.Random
 
 class AboutUs: ComponentActivity() {
@@ -41,10 +46,14 @@ class AboutUs: ComponentActivity() {
         val dialogToastArray = listOf(
             "Ngapain...?",
             "Ga boleh gitu.",
-            "Yahaha"
+            "Yahaha",
+            "Info..?",
+            "Pusat",
+            "ST Nyell"
         )
     }
 
+    @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -72,6 +81,7 @@ class AboutUs: ComponentActivity() {
                                         Text(
                                             text = stringResource(id = R.string.about_app),
                                             style = MaterialTheme.typography.subtitle2,
+                                            color = MaterialTheme.colors.primary,
                                             fontSize = 18.sp,
                                             modifier = Modifier.align(Alignment.CenterHorizontally)
                                         )
@@ -114,6 +124,13 @@ class AboutUs: ComponentActivity() {
                                 subtitle = { Text(text = "Untuk kenikmatan yang sudah di berikan kepada kita") },
                                 onClick = {}
                             )
+                            SettingsMenuLink(
+                                title = { Text(text = "Gust Iqdam") },
+                                subtitle = { Text(text = "Sebagai guru dan pembimbing kita") },
+                                onClick = {
+                                    openUrl(this@AboutUs, "https://www.instagram.com/iqdammuhammad_/")
+                                }
+                            )
                             Spacer(modifier = Modifier.size(10.dp))
                             Column(modifier = Modifier
                                 .padding(start = 15.dp, bottom = 5.dp)
@@ -131,16 +148,10 @@ class AboutUs: ComponentActivity() {
                                         contentDescription = "developer"
                                     )
                                 },
-                                title = { Text(text = "Developer") },
-                                subtitle = { Text(text = "Dhimas") },
+                                title = { Text(text = "Dhimas") },
+                                subtitle = { Text(text = "Developer") },
                             ) {
-                                try {
-                                    startActivity(
-                                        Intent(Intent.ACTION_VIEW)
-                                            .setData(Uri.parse("https://github.com/Kry9toN/"))
-                                    )
-                                } catch (e: Throwable) {
-                                }
+                                openUrl(this@AboutUs, "https://github.com/Kry9toN/")
                             }
                             SettingsMenuLink(
                                 icon = {
@@ -149,8 +160,8 @@ class AboutUs: ComponentActivity() {
                                         contentDescription = "developer"
                                     )
                                 },
-                                title = { Text(text = "Asset Management") },
-                                subtitle = { Text(text = "Irfan") },
+                                title = { Text(text = "Irfan") },
+                                subtitle = { Text(text = "Asset Management") },
                                 onClick = {}
                             )
                             SettingsMenuLink(
@@ -160,8 +171,8 @@ class AboutUs: ComponentActivity() {
                                         contentDescription = "developer"
                                     )
                                 },
-                                title = { Text(text = "Support System") },
-                                subtitle = { Text(text = "Bowo") },
+                                title = { Text(text = "Bowo") },
+                                subtitle = { Text(text = "Support System") },
                                 onClick = {}
                             )
                             SettingsMenuLink(
@@ -171,8 +182,8 @@ class AboutUs: ComponentActivity() {
                                         contentDescription = "developer"
                                     )
                                 },
-                                title = { Text(text = "Support System") },
-                                subtitle = { Text(text = "Aji") },
+                                title = { Text(text = "Aji") },
+                                subtitle = { Text(text = "Support System") },
                                 onClick = {}
                             )
                             SettingsMenuLink(
@@ -182,8 +193,8 @@ class AboutUs: ComponentActivity() {
                                         contentDescription = "developer"
                                     )
                                 },
-                                title = { Text(text = "Support System") },
-                                subtitle = { Text(text = "Sarkon") },
+                                title = { Text(text = "Sarkon") },
+                                subtitle = { Text(text = "Support System") },
                                 onClick = {}
                             )
                             SettingsMenuLink(
@@ -193,8 +204,8 @@ class AboutUs: ComponentActivity() {
                                         contentDescription = "developer"
                                     )
                                 },
-                                title = { Text(text = "Support System") },
-                                subtitle = { Text(text = "Agil") },
+                                title = { Text(text = "Agil") },
+                                subtitle = { Text(text = "Support System") },
                                 onClick = {}
                             )
                             SettingsMenuLink(
@@ -204,8 +215,8 @@ class AboutUs: ComponentActivity() {
                                         contentDescription = "developer"
                                     )
                                 },
-                                title = { Text(text = "Support System") },
-                                subtitle = { Text(text = "Ipen") },
+                                title = { Text(text = "Ipen") },
+                                subtitle = { Text(text = "Support System") },
                                 onClick = {}
                             )
                             Spacer(modifier = Modifier.size(10.dp))
@@ -232,6 +243,7 @@ class AboutUs: ComponentActivity() {
                                 },
                             )
                         }
+                        AboutAnimation()
                     }
                 }
             }
@@ -241,10 +253,10 @@ class AboutUs: ComponentActivity() {
     private fun onButtonClick2() {
         COUNT_CLICK += 1
         when (COUNT_CLICK) {
-            1 -> Toast.makeText(appContext, "Tekan 3 kali lagi....", Toast.LENGTH_SHORT).show()
+            1 -> Toast.makeText(this, "Tekan 3 kali lagi....", Toast.LENGTH_SHORT).show()
             4 -> {
                 val randomIndex = Random.nextInt(dialogToastArray.size)
-                Toast.makeText(appContext, dialogToastArray[randomIndex], Toast.LENGTH_LONG).show()
+                Toast.makeText(this, dialogToastArray[randomIndex], Toast.LENGTH_LONG).show()
                 COUNT_CLICK = 0
             }
         }
